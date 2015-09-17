@@ -23,7 +23,34 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector: @selector(onTimer) userInfo:nil repeats:YES];
+
 }
+
+- (void) onTimer {
+    // Add code to be run periodically
+    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    //[query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"user"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu msg.", (unsigned long)objects.count);
+            // Do something with the found objects
+            self.chatArray = objects;
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    [self.tableView reloadData];
+    //NSLog(@"-------------onTimer");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,26 +60,46 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.chatArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyChatCell" forIndexPath:indexPath];
+    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyChatCell"];
     // Configure the cell...
+    NSDictionary *item = self.chatArray[indexPath.row];
+    //cell.textLabel.text = item[@"text"];
+    NSLog(@"item ----- %@", item);
+    cell.chatText.text = item[@"text"];
     
+    if ([item objectForKey:@"user"] && (item[@"user"]!=nil)) {
+        NSLog(@"item user----- %@", item[@"user"]);
+        if ([item[@"user"] class] == [PFUser class]){
+            PFUser *pfuser = (PFUser*)item[@"user"];
+            if((pfuser!=nil) && (pfuser.username!=nil)){
+                @try {
+                    cell.user.text = pfuser.username;
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"ERROR: username not found");
+                }
+                @finally {
+                    
+                }
+                
+            }
+        }
+    }
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -102,6 +149,8 @@
     NSLog(@"MSG----------%@", self.msg.text);
     PFObject *message = [PFObject objectWithClassName:@"Message"];
     message[@"text"] = self.msg.text;
+    PFUser *user = [PFUser currentUser];
+    message[@"user"] = user;
 
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {

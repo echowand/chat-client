@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatCell.h"
 
 @interface ChatTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *msg;
+@property NSArray *chatArray;
 - (IBAction)saveButton:(id)sender;
 
 @end

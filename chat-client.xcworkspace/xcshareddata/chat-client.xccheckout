@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>39CC3206-9122-47B1-8FD4-CA78DA50E661</string>
+	<key>IDESourceControlProjectName</key>
+	<string>chat-client</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7A285E2F556153B3EA7768D01EC410B478DCE124</key>
+		<string>https://github.com/echowand/chat-client.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>chat-client.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7A285E2F556153B3EA7768D01EC410B478DCE124</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/echowand/chat-client.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7A285E2F556153B3EA7768D01EC410B478DCE124</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A285E2F556153B3EA7768D01EC410B478DCE124</string>
+			<key>IDESourceControlWCCName</key>
+			<string>chat-client</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		52D369AD25BABEB073011520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A95E51623E872225D4E1FEC /* libPods.a */; };
 		801929571BAA11A100AFC3F9 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801929561BAA11A100AFC3F9 /* ChatTableViewController.m */; };
+		8019295A1BAA1A0500AFC3F9 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 801929591BAA1A0500AFC3F9 /* ChatCell.m */; };
 		80347D6E1BA9FC450023E8F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80347D6D1BA9FC450023E8F2 /* main.m */; };
 		80347D711BA9FC450023E8F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80347D701BA9FC450023E8F2 /* AppDelegate.m */; };
 		80347D741BA9FC450023E8F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80347D731BA9FC450023E8F2 /* ViewController.m */; };
@@ -34,6 +35,8 @@
 		6A95E51623E872225D4E1FEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		801929551BAA11A100AFC3F9 /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
 		801929561BAA11A100AFC3F9 /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		801929581BAA1A0500AFC3F9 /* ChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatCell.h; sourceTree = "<group>"; };
+		801929591BAA1A0500AFC3F9 /* ChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatCell.m; sourceTree = "<group>"; };
 		80347D681BA9FC450023E8F2 /* chat-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80347D6C1BA9FC450023E8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80347D6D1BA9FC450023E8F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				80347D6B1BA9FC450023E8F2 /* Supporting Files */,
 				801929551BAA11A100AFC3F9 /* ChatTableViewController.h */,
 				801929561BAA11A100AFC3F9 /* ChatTableViewController.m */,
+				801929581BAA1A0500AFC3F9 /* ChatCell.h */,
+				801929591BAA1A0500AFC3F9 /* ChatCell.m */,
 			);
 			path = "chat-client";
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				80347D741BA9FC450023E8F2 /* ViewController.m in Sources */,
 				80347D711BA9FC450023E8F2 /* AppDelegate.m in Sources */,
 				80347D6E1BA9FC450023E8F2 /* main.m in Sources */,
+				8019295A1BAA1A0500AFC3F9 /* ChatCell.m in Sources */,
 				801929571BAA11A100AFC3F9 /* ChatTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
